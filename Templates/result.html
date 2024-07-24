@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Result</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: url('/static/pexels-wendywei-1555900.jpg') center/cover no-repeat, rgba(0, 0, 0, 0.3);
+            background-blend-mode: darken;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Backdrop effect */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            z-index: -1;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #222;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Image styling */
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Link button styling */
+        a {
+            display: inline-block;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-weight: 600;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        a:active {
+            background-color: #004494;
+            transform: scale(0.98);
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            a {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            a {
+                padding: 12px 20px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Business Card</h1>
+        <img src="{{ url_for('static', filename='business_card.png') }}" alt="Business Card">
+        <a href="{{ url_for('download') }}">Download Business Card</a>
+    </div>
+</body>
+</html>

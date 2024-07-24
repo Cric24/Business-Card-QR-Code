@@ -1,0 +1,103 @@
+/* General styles */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: url('/static/pexels-wendywei-1555900.jpg') center/cover no-repeat, rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Backdrop effect */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(24px);
+    z-index: -1;
+}
+
+/* Container styling */
+.container {
+    background: rgba(159, 148, 182, 0.048);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Heading styling */
+h1 {
+    color: #e1e2eb;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+form {
+    padding-left: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    padding-bottom: 8px;
+    margin: 12px 0 6px;
+    font-size: 0.95rem;
+    color: #e6d8d8;
+}
+
+/* Input styling */
+input {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9d2;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.05);
+}
+
+button:active {
+    background: linear-gradient(135deg, #004494, #003366);
+    transform: scale(0.98);
+}
